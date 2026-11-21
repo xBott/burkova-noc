@@ -1,5 +1,38 @@
 # Búrková noc
 
+## How to run (solution)
+
+Needs Python 3.10+ and nothing else: both scripts use only the standard library. Use `python3`
+instead of `python` if that's what your system has.
+
+```bash
+python classify.py data/transcripts.jsonl > predictions_night1.csv
+```
+
+Writes `call_id,label` for every call to stdout. With no file argument it reads from stdin.
+Malformed lines are skipped with a warning on stderr.
+
+```bash
+python check_labels.py
+```
+
+Compares the classifier with `data/labeled_sample.jsonl` and prints accuracy per label and every
+disagreement. Pass another labeled file as an argument to check that instead.
+
+The EDA notebook (`eda.ipynb`) needs pandas and matplotlib. Install them with `uv sync`, then open
+the notebook with the `.venv` kernel and run it from the repo root.
+
+| File | What it is |
+|---|---|
+| `classify.py` | Task 1: the rule-based classifier |
+| `predictions_night1.csv` | Task 1: predictions for all 11,400 calls |
+| `check_labels.py` | Accuracy check against the hand-labeled sample |
+| `REPORT.md` | Tasks 2–4: the numbers, the client email, what next |
+| `NOTES.md` | Task 5: assumptions, what's next, how AI tools were used |
+| `eda.ipynb` | Exploratory analysis the rules were built from |
+
+---
+
 *Zadanie na workshop Born Digital @ Night of Chances IT 2026.*
 
 Si **forward deployed engineer** na účte **Voltika**. Je **pondelok 16. novembra
