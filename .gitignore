@@ -22,4 +22,4 @@ dist/
 .vscode/
 
 # Local agent config
-.agents
+.agents/
